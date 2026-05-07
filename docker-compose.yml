@@ -1,0 +1,23 @@
+services:
+  # Base de datos para guardar paquetes y rutas
+  db:
+    image: postgres:15
+    container_name: tfg_db
+    restart: always
+    environment:
+      POSTGRES_USER: usuario_reparto
+      POSTGRES_PASSWORD: password_seguro
+      POSTGRES_DB: reparto_db
+    ports:
+      - "5432:5432"
+
+  # Motor de rutas (OSRM)
+  tfg_osrm:
+    image: osrm/osrm-backend
+    container_name: tfg_osrm
+    volumes:
+      - ./infra/osrm_data:/data
+    ports:
+      - "5000:5000"
+    command: osrm-routed --algorithm mld /data/posadas_editado.osrm
+    restart: always

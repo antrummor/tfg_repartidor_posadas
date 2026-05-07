@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+.venv/
+*.pyc
+
+# Docker e Infra (¡IMPORTANTE!)
+infra/osrm_data/
+infra/db_data/
+*.osrm*
+*.pbf
+
+# Otros
+.DS_Store
+.env
