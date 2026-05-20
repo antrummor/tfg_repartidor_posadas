@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paquetes - Repartidor Posadas</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="/static/app.js" defer></script>
+</head>
+<body data-page="packages">
+    <header class="topbar">
+        <a class="brand" href="/" aria-label="Inicio">
+            <span class="brand-mark">RP</span>
+            <span>
+                <strong>Repartidor Posadas</strong>
+                <small>Paquetes cargados</small>
+            </span>
+        </a>
+
+        <nav class="nav-links" aria-label="Navegacion principal">
+            <a class="active" href="/paquetes">Paquetes</a>
+            <a href="/subir-csv">Subir CSV</a>
+            <a href="/ruta">Ruta</a>
+        </nav>
+    </header>
+
+    <main class="page">
+        <div class="page-title with-actions">
+            <div>
+                <p class="eyebrow">Base de datos</p>
+                <h1>Paquetes cargados</h1>
+                <p class="lead">Listado completo con estado de entrega y datos necesarios para la ruta.</p>
+            </div>
+            <a class="button primary" href="/subir-csv">Subir CSV</a>
+        </div>
+
+        <section class="stats-grid compact" aria-label="Resumen de paquetes">
+            <article class="stat-card">
+                <span class="stat-label">Cargados</span>
+                <strong id="stat-total">-</strong>
+            </article>
+            <article class="stat-card pending">
+                <span class="stat-label">Pendientes</span>
+                <strong id="stat-pending">-</strong>
+            </article>
+            <article class="stat-card delivered">
+                <span class="stat-label">Entregados</span>
+                <strong id="stat-delivered">-</strong>
+            </article>
+        </section>
+
+        <section class="list-toolbar" aria-label="Filtros de paquetes">
+            <div class="segmented-control">
+                <button class="active" type="button" data-filter="all">Todos</button>
+                <button type="button" data-filter="pending">Pendientes</button>
+                <button type="button" data-filter="delivered">Entregados</button>
+            </div>
+            <button id="refresh-packages" class="button ghost" type="button">Actualizar</button>
+        </section>
+
+        <div id="packages-status" class="inline-status" role="status"></div>
+        <section id="packages-list" class="packages-list" aria-live="polite"></section>
+    </main>
+</body>
+</html>

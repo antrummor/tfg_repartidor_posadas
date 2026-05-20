@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repartidor Posadas</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="/static/app.js" defer></script>
+</head>
+<body data-page="home">
+    <header class="topbar">
+        <a class="brand" href="/" aria-label="Inicio">
+            <span class="brand-mark">RP</span>
+            <span>
+                <strong>Repartidor Posadas</strong>
+                <small>Gestion de paquetes y ruta</small>
+            </span>
+        </a>
+
+        <nav class="nav-links" aria-label="Navegacion principal">
+            <a href="/paquetes">Paquetes</a>
+            <a href="/subir-csv">Subir CSV</a>
+            <a href="/ruta">Ruta</a>
+        </nav>
+    </header>
+
+    <main class="page dashboard-page">
+        <section class="dashboard-head">
+            <div>
+                <p class="eyebrow">Panel de reparto</p>
+                <h1>Todo listo para preparar la jornada.</h1>
+                <p class="lead">Consulta los paquetes cargados, importa nuevos pedidos y genera la ruta optimizada desde un mismo sitio.</p>
+            </div>
+            <div class="route-visual" aria-hidden="true">
+                <span class="route-point point-a"></span>
+                <span class="route-point point-b"></span>
+                <span class="route-point point-c"></span>
+                <span class="route-line line-a"></span>
+                <span class="route-line line-b"></span>
+            </div>
+        </section>
+
+        <section class="stats-grid" aria-label="Resumen de paquetes">
+            <article class="stat-card">
+                <span class="stat-label">Cargados</span>
+                <strong id="stat-total">-</strong>
+            </article>
+            <article class="stat-card pending">
+                <span class="stat-label">Pendientes</span>
+                <strong id="stat-pending">-</strong>
+            </article>
+            <article class="stat-card delivered">
+                <span class="stat-label">Entregados</span>
+                <strong id="stat-delivered">-</strong>
+            </article>
+        </section>
+
+        <section class="action-grid" aria-label="Acciones principales">
+            <a class="action-card" href="/paquetes">
+                <span class="action-kicker">01</span>
+                <strong>Ver paquetes cargados</strong>
+                <span>Revisa cliente, direccion, tamano, observaciones y estado.</span>
+            </a>
+            <a class="action-card" href="/subir-csv">
+                <span class="action-kicker">02</span>
+                <strong>Subir nuevo CSV</strong>
+                <span>Importa pedidos nuevos y guarda sus coordenadas en la base de datos.</span>
+            </a>
+            <a class="action-card primary-card" href="/ruta">
+                <span class="action-kicker">03</span>
+                <strong>Generar ruta</strong>
+                <span>Abre el mapa, consulta observaciones y marca entregas.</span>
+            </a>
+        </section>
+
+        <p id="home-status" class="inline-status" role="status"></p>
+    </main>
+</body>
+</html>

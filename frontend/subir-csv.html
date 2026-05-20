@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir CSV - Repartidor Posadas</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="/static/app.js" defer></script>
+</head>
+<body data-page="upload">
+    <header class="topbar">
+        <a class="brand" href="/" aria-label="Inicio">
+            <span class="brand-mark">RP</span>
+            <span>
+                <strong>Repartidor Posadas</strong>
+                <small>Carga de pedidos</small>
+            </span>
+        </a>
+
+        <nav class="nav-links" aria-label="Navegacion principal">
+            <a href="/paquetes">Paquetes</a>
+            <a class="active" href="/subir-csv">Subir CSV</a>
+            <a href="/ruta">Ruta</a>
+        </nav>
+    </header>
+
+    <main class="page narrow-page">
+        <div class="page-title">
+            <p class="eyebrow">Nuevo archivo</p>
+            <h1>Subir CSV de paquetes</h1>
+            <p class="lead">El archivo debe incluir las columnas direccion, cliente, tamano y observaciones.</p>
+        </div>
+
+        <section class="tool-panel">
+            <form id="csv-form" class="upload-form">
+                <label for="csv-file">Archivo CSV</label>
+                <input id="csv-file" name="file" type="file" accept=".csv,text/csv" required>
+                <div class="button-row">
+                    <button id="upload-button" class="button primary" type="button">Cargar CSV</button>
+                    <button id="delete-button" class="button danger-outline" type="button">Eliminar datos</button>
+                </div>
+            </form>
+
+            <div id="upload-status" class="status-box" role="status">Selecciona un archivo para empezar.</div>
+        </section>
+
+        <div class="split-actions">
+            <a class="button ghost" href="/paquetes">Ver paquetes</a>
+            <a class="button secondary" href="/ruta">Generar ruta</a>
+        </div>
+    </main>
+</body>
+</html>

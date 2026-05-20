@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruta - Repartidor Posadas</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+    <script src="/static/app.js" defer></script>
+</head>
+<body data-page="route">
+    <header class="topbar route-topbar">
+        <a class="brand" href="/" aria-label="Inicio">
+            <span class="brand-mark">RP</span>
+            <span>
+                <strong>Repartidor Posadas</strong>
+                <small>Ruta de reparto</small>
+            </span>
+        </a>
+
+        <nav class="nav-links" aria-label="Navegacion principal">
+            <a href="/paquetes">Paquetes</a>
+            <a href="/subir-csv">Subir CSV</a>
+            <a class="active" href="/ruta">Ruta</a>
+        </nav>
+    </header>
+
+    <main class="route-page">
+        <section class="map-shell">
+            <div id="map" aria-label="Mapa de la ruta"></div>
+        </section>
+
+        <aside class="route-panel" aria-label="Secuencia de entrega">
+            <div class="route-panel-head">
+                <div>
+                    <p class="eyebrow">Ruta optimizada</p>
+                    <h1>Secuencia de entrega</h1>
+                </div>
+                <button id="refresh-route" class="button ghost small" type="button">Actualizar</button>
+            </div>
+
+            <div id="route-status" class="status-box" role="status">Calculando ruta...</div>
+            <div id="undo-area" class="undo-area" aria-live="polite"></div>
+            <div id="route-list" class="route-list"></div>
+        </aside>
+    </main>
+</body>
+</html>
